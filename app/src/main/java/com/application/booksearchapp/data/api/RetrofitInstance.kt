@@ -1,4 +1,4 @@
-package com.application.booksearchapp.data.model.api
+package com.application.booksearchapp.data.api
 
 import com.application.booksearchapp.util.Constants.BASE_URL
 import okhttp3.OkHttpClient

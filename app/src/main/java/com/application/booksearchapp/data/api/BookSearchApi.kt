@@ -1,4 +1,4 @@
-package com.application.booksearchapp.data.model.api
+package com.application.booksearchapp.data.api
 
 import com.application.booksearchapp.data.model.SearchResponse
 import com.application.booksearchapp.util.Constants.API_KEY
