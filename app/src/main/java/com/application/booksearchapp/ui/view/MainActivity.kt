@@ -23,16 +23,15 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             binding.bottomNavigationView.selectedItemId = R.id.fragment_search
         }
+
         val bookSearchRepository = BookSearchRepositoryImpl()
         val factory = BookSearchViewModelProviderFactory(bookSearchRepository, this)
-        bookSearchViewModel = ViewModelProvider(this, factory)[BookSearchViewModel::
-        class.java]
+        bookSearchViewModel = ViewModelProvider(this, factory)[BookSearchViewModel::class.java]
     }
 
-
     private fun setupBottomNavigationView() {
-        binding.bottomNavigationView.setOnClickListener { item ->
-            when (item.id) {
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
                 R.id.fragment_search -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame_layout, SearchFragment())
@@ -55,12 +54,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 else -> false
-
-
             }
         }
-
     }
-
 }
-
